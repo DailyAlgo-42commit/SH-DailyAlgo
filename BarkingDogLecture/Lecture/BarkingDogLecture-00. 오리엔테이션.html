@@ -1,0 +1,716 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>오리엔테이션</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-default { background-color: rgba(84, 72, 49, 0.08); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2532bc72-380c-809d-9e7d-d9f196ac53a9" class="page sans"><header><h1 class="page-title">오리엔테이션</h1><p class="page-description"></p></header><div class="page-body"><h1 id="2532bc72-380c-80d6-9fc4-ec2defe03a3c" class="">강의 구성</h1><figure id="2532bc72-380c-8081-84e9-c3348796bc97" class="image"><a href="110B6AF0-2C74-424B-AFD7-ABA47279793E.png"><img style="width:709.9750366210938px" src="110B6AF0-2C74-424B-AFD7-ABA47279793E.png"/></a></figure><ul id="2532bc72-380c-80c1-898d-e77a37bd223c" class="bulleted-list"><li style="list-style-type:disc">0x11강 까지는 필수로 무조건 해야함!</li></ul><ul id="2532bc72-380c-8099-8556-cd726ad506dd" class="bulleted-list"><li style="list-style-type:disc">BFS/DFS/백트래킹/시뮬레이션 문제가 많이 나</li></ul><h1 id="2532bc72-380c-80c9-9c51-fc4857459ab5" class="">코딩테스트란?</h1><ul id="2532bc72-380c-80ee-96ba-e2c36654e329" class="bulleted-list"><li style="list-style-type:disc">주어진 문제를 정해진 시간/메모리 제한 내로 풀어내는 시험</li></ul><h2 id="2532bc72-380c-809f-8f57-d4c6b04a2191" class="">코딩테스트 예시</h2><figure id="2532bc72-380c-80f8-b5ed-e4f8d01fece0" class="image"><a href="70F55D0A-729F-410A-9F13-9958AE56114D.png"><img style="width:384px" src="70F55D0A-729F-410A-9F13-9958AE56114D.png"/></a></figure><ul id="2532bc72-380c-8081-9ad3-d957cc6e7eb0" class="bulleted-list"><li style="list-style-type:disc">시간 제한 : 프로그램이 시작하고 결과를 1초 안에 내고 정상적으로 종료되어야 한다.</li></ul><ul id="2532bc72-380c-80dc-b803-c4b6b28880c7" class="bulleted-list"><li style="list-style-type:disc">메모리 제한 : 이 프로그램이 메모리를 256MB 이하로 사용해야 한다.</li></ul><ul id="2532bc72-380c-8042-bfef-ce43764e923d" class="bulleted-list"><li style="list-style-type:disc">답안 예시<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2532bc72-380c-8014-87a1-f27d79632144" class="code code-wrap"><code class="language-C++" style="white-space:pre-wrap;word-break:break-all">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main(void){
+
+	int a, b;
+	
+	cin &gt;&gt; a &gt;&gt; b;
+	cout &lt;&lt; a + b;
+	
+	return 0;
+}</code></pre></li></ul><ul id="2532bc72-380c-802f-8ab0-e22e136c9ece" class="bulleted-list"><li style="list-style-type:disc">답안 제출 → 서버는 <strong>수 많은 테스트케이스(Test Case== TC)를 이용</strong>하여 코드를 채점함<figure id="2532bc72-380c-8011-8d16-c576ed131e26" class="image"><a href="83B9C0A1-9076-4A9B-A335-B0EE5D7EEB56.png"><img style="width:480px" src="83B9C0A1-9076-4A9B-A335-B0EE5D7EEB56.png"/></a></figure></li></ul><ul id="2532bc72-380c-803d-9185-c26dfa48ec45" class="bulleted-list"><li style="list-style-type:disc">부분 점수같은건 없음. TC 중에 하나라도 불만족하면 그냥  틀린 것임</li></ul><h2 id="2532bc72-380c-80e1-97d0-f0aa6a2e6978" class="">코딩테스트 대비를 위한 사이트</h2><ul id="2532bc72-380c-80a7-89c4-f3f3c0468bee" class="bulleted-list"><li style="list-style-type:disc">백준 온라인 저지 : https://acmicpc.net</li></ul><ul id="2532bc72-380c-8083-b8f5-f1c53fe6b60d" class="bulleted-list"><li style="list-style-type:disc">프로그래머스 : https://programmers.co.kr</li></ul><ul id="2532bc72-380c-80e0-8c4e-e74fb537b6e7" class="bulleted-list"><li style="list-style-type:disc">구름 : https://groom.io</li></ul><ul id="2532bc72-380c-80ab-b1d7-f138c414c4c6" class="bulleted-list"><li style="list-style-type:disc">SW Expert Academy : https://swexpertacademy.com<ul id="2532bc72-380c-800e-b693-e848e64817d3" class="bulleted-list"><li style="list-style-type:circle">삼성이 관리하는 삼성 SW 역량 테스트가 출제되는 곳임으로 삼성을 노린다면 한 번쯤 들려보는 것이 좋음</li></ul></li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2532bc72-380c-8093-8bbc-fcc698a207db"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="2532bc72-380c-806f-b42e-d40fc983ec82" class="">제출이 됐다 하더라도 정답을 맞춘게 아닐 수 있으니 스스로 TC를 만들어서 체크해보는게 좋음</p></div></figure><h2 id="2532bc72-380c-800d-965d-caaa93291a46" class="">코딩테스트 준비를 위해 필요한 것</h2><h3 id="2532bc72-380c-802b-9cad-cc35aed15009" class="">배경지식</h3><ul id="2532bc72-380c-803f-af19-ec11348eeb54" class="bulleted-list"><li style="list-style-type:disc">다양한 알고리즘, 자료구조, 기타 테크닉 등</li></ul><ul id="2532bc72-380c-80ee-bf9b-e6740f97fb0d" class="bulleted-list"><li style="list-style-type:disc">문제를 해결하기 위해 필요한 지식</li></ul><h3 id="2532bc72-380c-8017-a8ad-de9412446f6f" class="">문제해결능력</h3><ul id="2532bc72-380c-8048-acca-e865b9c93be3" class="bulleted-list"><li style="list-style-type:disc">배경지식을 지금 당면한 문제에 맞게 잘 변형해서 적용시키는 능력</li></ul><ul id="2532bc72-380c-80d9-bb05-d6b563f4ff86" class="bulleted-list"><li style="list-style-type:disc"><strong>“이 문제에서 요구하는 알고리즘이 무엇인가?”</strong>를 알아차릴 수 있어야 함</li></ul><h3 id="2532bc72-380c-80cd-bf58-d724b46148e4" class="">구현력</h3><ul id="2532bc72-380c-8010-8024-d0caf32b2051" class="bulleted-list"><li style="list-style-type:disc">본인이 생각한 풀이를 코드로 잘 옮겨낼 수 있는 능력</li></ul><ul id="2532bc72-380c-80e1-a9ea-dd86fcd0f5ea" class="bulleted-list"><li style="list-style-type:disc">내가 맞은 문제를 다른 사람들은 어떻게 풀어냈는지 비교해보는걸 추</li></ul><h1 id="2532bc72-380c-80de-b0a9-d8a90662131e" class="">예시</h1><h2 id="2532bc72-380c-8018-b07b-d857617043c9" class="">문제 : 주어진 4칸짜리 배열에서 최댓값을 반환해라</h2><ul id="2532bc72-380c-80e3-8d3d-e8b3ec98dedd" class="bulleted-list"><li style="list-style-type:disc">첫 번째 풀이<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2532bc72-380c-80cf-a954-de246b01a843" class="code code-wrap"><code class="language-C++" style="white-space:pre-wrap;word-break:break-all">int solution1(int arr[]){
+	if(arr[0] &gt; arr[1] &amp;&amp; arr[0] &gt; arr[2] &amp;&amp; arr[0] &gt; arr[3])
+		return arr[0];
+	if(arr[1] &gt; arr[0] &amp;&amp; arr[1] &gt; arr[2] &amp;&amp; arr[1] &gt; arr[3])
+		return arr[1];
+	if(arr[2] &gt; arr[0] &amp;&amp; arr[2] &gt; arr[1] &amp;&amp; arr[2] &gt; arr[3])
+		return arr[2];
+	return arr[3];
+}</code></pre><ul id="2532bc72-380c-8074-b78f-d1b4ca03d5b7" class="bulleted-list"><li style="list-style-type:circle">그런데 만약에 최댓값이 여러개라면? → [9, 9, 3, 1]과 같은 배열이 주어진 경우<br/>→ 두 번째 풀이</li></ul></li></ul><ul id="2532bc72-380c-8096-85b2-f4001c1529d0" class="bulleted-list"><li style="list-style-type:disc">두 번째 풀이<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2532bc72-380c-80bb-8467-f5aac3a119a4" class="code code-wrap"><code class="language-C++" style="white-space:pre-wrap;word-break:break-all">int solution1(int arr[]){
+	if(arr[0] &gt;= arr[1] &amp;&amp; arr[0] &gt;= arr[2] &amp;&amp; arr[0] &gt;= arr[3])
+		return arr[0];
+	if(arr[1] &gt;= arr[0] &amp;&amp; arr[1] &gt;= arr[2] &amp;&amp; arr[1] &gt;= arr[3])
+		return arr[1];
+	if(arr[2] &gt;= arr[0] &amp;&amp; arr[2] &gt;= arr[1] &amp;&amp; arr[2] &gt;= arr[3])
+		return arr[2];
+	return arr[3];
+}</code></pre><ul id="2532bc72-380c-805e-9443-c02f713691ff" class="bulleted-list"><li style="list-style-type:circle">그런데, 두 번째 풀이도 노가다성이 있음<br/>→ 세 번째 풀이</li></ul></li></ul><ul id="2532bc72-380c-800e-83af-f86848b0bf3b" class="bulleted-list"><li style="list-style-type:disc">세 번째 풀이<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2532bc72-380c-808d-af5b-c66f0d09deb3" class="code code-wrap"><code class="language-C++" style="white-space:pre-wrap;word-break:break-all">int solution2(int arr[]){
+	int mx = arr[0];
+	for(int i = 0; i &lt;= 3; i++){
+		if(arr[i] &gt; mx) mx = arr[i];
+	}
+	return mx;
+}</code></pre></li></ul><ul id="2532bc72-380c-8096-ad6e-def08c30b009" class="bulleted-list"><li style="list-style-type:disc">네 번째 풀이 : STL을 이용해서 날로먹기<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2532bc72-380c-8082-a7f2-e33772a4848b" class="code code-wrap"><code class="language-C++" style="white-space:pre-wrap;word-break:break-all">int solution3(int arr[]){
+	return *max_element(arr, arr+4);
+}</code></pre><ul id="2532bc72-380c-8012-b32b-e9ded0b87f28" class="bulleted-list"><li style="list-style-type:circle"><code>max_element</code><ul id="2532bc72-380c-8064-89a2-d4b3ce27a153" class="bulleted-list"><li style="list-style-type:square">가장 큰 원소가 있는 곳의 포인터(주소값)을 반환하는 함수</li></ul><ul id="2532bc72-380c-804a-992c-d71b2540ad0f" class="bulleted-list"><li style="list-style-type:square"><code>*</code> operator를 이용해서 그 주소의 값을 반환하도록 함</li></ul></li></ul></li></ul><h2 id="2532bc72-380c-8027-a9d0-f6a79dce2125" class="">어떤 풀이가 제일 좋은가?</h2><ul id="2532bc72-380c-80f4-893a-cb7604695820" class="bulleted-list"><li style="list-style-type:disc">누가 봐도 네 번째 풀이가 제일 깔끔해보임</li></ul><ul id="2532bc72-380c-801a-942d-c5ed1606f7dd" class="bulleted-list"><li style="list-style-type:disc">즉, 다른 사람이 어떻게 풀었는지 확인해보면 더 멋진 코드를 만드는 법을 익힐 수도 있음</li></ul><h1 id="2532bc72-380c-803c-8089-e23eb34345ab" class="">강의 연습문제 위치</h1><figure id="2532bc72-380c-80bd-9771-f3deef61ac22"><div class="source">https://github.com/encrypted-def/basic-algo-lecture/blob/master/workbook.md</div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
