@@ -1,6 +1,6 @@
 # 강의 구성
 
-![{110B6AF0-2C74-424B-AFD7-ABA47279793E}.png](attachment:c6375b99-aca6-4b00-a2dd-697a874b8a51:110B6AF0-2C74-424B-AFD7-ABA47279793E.png)
+![강의 구성](./images/lecture_intro.png)  
 
 - 0x11강 까지는 필수로 무조건 해야함!
 - BFS/DFS/백트래킹/시뮬레이션 문제가 많이 나
@@ -11,7 +11,7 @@
 
 ## 코딩테스트 예시
 
-![{70F55D0A-729F-410A-9F13-9958AE56114D}.png](attachment:4d89086d-8a7f-4528-b2aa-a8ecff366cf0:70F55D0A-729F-410A-9F13-9958AE56114D.png)
+![코딩테스트 예시](./images/example_tc.png)  
 
 - 시간 제한 : 프로그램이 시작하고 결과를 1초 안에 내고 정상적으로 종료되어야 한다.
 - 메모리 제한 : 이 프로그램이 메모리를 256MB 이하로 사용해야 한다.
@@ -35,7 +35,7 @@
     
 - 답안 제출 → 서버는 **수 많은 테스트케이스(Test Case== TC)를 이용**하여 코드를 채점함
     
-    ![{83B9C0A1-9076-4A9B-A335-B0EE5D7EEB56}.png](attachment:860a7387-b378-409e-bdc8-c053a1a10e57:83B9C0A1-9076-4A9B-A335-B0EE5D7EEB56.png)
+    ![채점 과정](./images/judging_process.png)  
     
 - 부분 점수같은건 없음. TC 중에 하나라도 불만족하면 그냥  틀린 것임
 
