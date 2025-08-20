@@ -30,13 +30,16 @@ Release/
 *.tlog
 *.lastbuildstate
 
+# --- 연습장 파일 ---
+memo.cpp
+
 # --- JSON 같은 IDE 환경 파일 ---
 *.backup.json
 *.VSWorkspaceState.json
 ProjectSettings.json
 
 # --- 본인이 원하는 것만 남기기 ---
-# ✅ 코드 및 문서만 포함
+# 코드 및 문서만 포함
 !*.cpp
 !*.h
 !*.md
