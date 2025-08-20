@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -13,15 +14,29 @@ int func1(int N) {
 }
 
 int func2(int arr[], int N) {
-    return -1;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = i + 1; j < N; j++) {
+            if (arr[i] + arr[j] == 100) return 1;
+        }
+    }
+    return 0;
 }
 
 int func3(int N) {
-    return -1;
+    for (int i = 1; i * i <= N; i++) {
+        if (i * i == N) return 1;
+    }
+    return 0;
 }
 
 int func4(int N) {
-    return -1;
+    int ans = 1;
+    while (1) {
+        ans *= 2;
+        if (ans * 2 > N) break;
+    }
+    return ans;
 }
 
 void test1() {
