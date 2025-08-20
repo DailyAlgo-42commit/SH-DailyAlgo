@@ -1,0 +1,39 @@
+# --- Visual Studio 기본 ---
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+*.db
+*.db-wal
+*.db-shm
+*.opendb
+*.VC.db
+
+# --- 빌드 결과물 ---
+x64/
+Debug/
+Release/
+*.obj
+*.exe
+*.dll
+*.pdb
+*.idb
+*.ipch
+*.ilk
+*.log
+
+# --- 기타 불필요 파일 ---
+*.cache
+*.tlog
+*.lastbuildstate
+
+# --- JSON 같은 IDE 환경 파일 ---
+*.backup.json
+*.VSWorkspaceState.json
+ProjectSettings.json
+
+# --- 본인이 원하는 것만 남기기 ---
+# ✅ 코드 및 문서만 포함
+!*.cpp
+!*.h
+!*.md
