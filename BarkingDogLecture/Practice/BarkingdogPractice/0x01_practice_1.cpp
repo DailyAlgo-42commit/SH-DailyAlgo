@@ -31,12 +31,9 @@ int func3(int N) {
 }
 
 int func4(int N) {
-    int ans = 1;
-    while (1) {
-        ans *= 2;
-        if (ans * 2 > N) break;
-    }
-    return ans;
+    int val = 1;
+    while (2 * val <= N) val *= 2;
+    return val;
 }
 
 void test1() {

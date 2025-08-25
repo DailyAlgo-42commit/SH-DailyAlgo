@@ -214,3 +214,72 @@ int solution(int storage, int usage, vector<int> change) {
 - 퍼센트 연산은 **실수 변환**을 반드시 해주는 것이 안전하다.  
 - 정수만 사용하면 작은 변화율이 반영되지 않을 수 있다.  
 - 최종적으로는 `double` 캐스팅 방식이 정석 풀이.
+
+# 250825_옹알이_(1).cpp
+## C++ 문자열 & 벡터 관련 정리
+
+### 1. `continue`와 `break` 차이
+- `continue`  
+  - 현재 반복문의 **나머지 부분 건너뛰고** 다음 반복 조건 검사로 이동  
+  - 조건문을 무시하는 게 아니라, 조건이 참일 때 실행되면 **그 아래 코드만 생략**됨  
+- `break`  
+  - **현재 반복문 전체를 탈출**  
+  - 바깥 반복문이나 함수까지는 나가지 않음  
+- `return`  
+  - 현재 함수 전체 종료  
+
+```cpp
+for (int i=0; i<5; i++) {
+    if (i == 2) continue; // 2 건너뜀
+    if (i == 4) break;    // 반복문 종료
+    cout << i << " ";
+}
+// 출력: 0 1 3
+```
+### 2. 문자열 비교 방법
+* `std::string`
+    * ==, != 연산자 사용 가능
+    * 내부적으로는 string::compare() 호출
+```
+string a = "hello", b = "world";
+if (a == "hello") { ... }
+if (a != b) { ... }
+```
+* C 스타일 문자열 (`char*`)
+`strcmp(a, b) == 0` 이어야 같음 (`<cstring>` 필요)
+
+```
+const char* a = "hi";
+const char* b = "hi";
+if (strcmp(a, b) == 0) cout << "same";
+```
+### 3. 문자열 vs 벡터 혼동 문제
+* 실수: `vector<string> word = babbling[i];`
+* `b`abbling[i]`는 string인데, `vector<string>`에 대입 → 타입 불일치 에러
+* 해결: `string word = babbling[i];`
+* 실수: `tmp_word.substr(...)` 호출 시 `tmp_word`를 `vector<string>`로 선언함
+    * substr는 string 전용 메서드
+* 해결: `tmp_word`를 `string`으로 선언
+
+### 4. substr 동작
+* `substr(pos, len)`
+    * pos에서 시작해서 최대 len 길이 문자열 반환
+    * 남은 길이가 len보다 짧으면 가능한 만큼 반환
+    * 단, pos > size()면 예외 발생
+
+```
+string s = "hello";
+cout << s.substr(0,2); // "he"
+cout << s.substr(2,3); // "llo"
+cout << s.substr(4,5); // "o"
+```
+
+### 5. 매칭 실패 처리 로직
+* while 내부에서 2글자, 3글자 모두 매칭 실패 시 → break → while문 탈출
+
+* 탈출 후 tmp_word_len == 0 검증 필요
+    * 0 → 유효 단어
+    * 0 아님 → 잘 안 잘린 남은 글자가 있으므로 invalid
+# 250825_PCCE_6.cpp
+## vector 자료형에서 마지막 원소 가져오기
+* `a.back()'과 같이 가져오면 됨
